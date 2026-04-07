@@ -1,0 +1,1396 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description"
+    content="Miradas de Alegría — Transformamos realidades apoyando a comunidades vulnerables con dignidad, raíces y esperanza. Conoce nuestra misión, proyectos y compromiso social.">
+  <meta name="keywords"
+    content="ONG, fundación, comunidades vulnerables, desarrollo sostenible, educación, deporte, derechos humanos, Latinoamérica">
+  <meta name="author" content="Miradas de Alegría">
+  <!-- Open Graph / Social Sharing -->
+  <meta property="og:title" content="Miradas de Alegría — Transformamos Realidades">
+  <meta property="og:description"
+    content="Apoyamos a comunidades vulnerables con dignidad, raíces y esperanza. Conoce nuestra misión y cómo puedes ayudar.">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="es_LA">
+  <!-- Content Security Policy: whitelists all CDN resources used -->
+  <meta http-equiv="Content-Security-Policy" content="
+    default-src 'self';
+    script-src 'self' 'unsafe-inline' 'unsafe-eval'
+      https://cdn.tailwindcss.com
+      https://cdnjs.cloudflare.com
+      https://www.google.com
+      https://www.gstatic.com
+      https://www.gstatic.com/firebasejs/
+      https://apis.google.com;
+    style-src 'self' 'unsafe-inline'
+      https://cdnjs.cloudflare.com
+      https://fonts.googleapis.com
+      https://www.gstatic.com;
+    font-src 'self'
+      https://fonts.gstatic.com
+      https://cdnjs.cloudflare.com;
+    img-src 'self' data: blob:
+      https://images.unsplash.com
+      https://www.gstatic.com
+      https://*.googleusercontent.com;
+    frame-src 'self'
+      https://www.google.com
+      https://www.gstatic.com
+      https://organizacion-benefica.firebaseapp.com;
+    connect-src 'self'
+      https://firestore.googleapis.com
+      https://*.firebaseio.com
+      https://www.google.com
+      https://identitytoolkit.googleapis.com;
+    worker-src 'self' blob:;
+  ">
+  <title>Miradas de Alegría — Sobre Nosotros | Nuestra Misión</title>
+
+  <!-- ========== Tailwind CSS (Play CDN) ========== -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            'verde-bosque': '#166534',
+            'verde-bosque-dark': '#14532d',
+            'azul-confianza': '#1e40af',
+            'azul-confianza-dark': '#1e3a8a',
+            'beige-suave': '#f5f0e8',
+            'negro-suave': '#1e293b',
+          },
+          fontFamily: {
+            sans: ['Inter', 'Segoe UI', 'system-ui', '-apple-system', 'sans-serif'],
+          },
+        },
+      },
+    }
+  </script>
+
+  <!-- ========== Font Awesome 6 (CDN) ========== -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+  <!-- ========== AOS (Animate On Scroll) ========== -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" />
+
+  <!-- ========== Google reCAPTCHA v2 ========== -->
+  <script>
+    let recaptchaDonationId;
+    let recaptchaContactId;
+    let recaptchaPopupId;
+    let recaptchaNewsId;
+    var onloadRecaptcha = function () {
+      var siteKey = '6Ld9jqQsAAAAAORni9XlFR1qNxAdfJMSNvr6ucAn';
+      var elDon = document.getElementById('recaptcha-donation');
+      if (elDon) {
+        recaptchaDonationId = grecaptcha.render('recaptcha-donation', { 'sitekey': siteKey });
+      }
+      var elCon = document.getElementById('recaptcha-contact');
+      if (elCon) {
+        recaptchaContactId = grecaptcha.render('recaptcha-contact', { 'sitekey': siteKey });
+      }
+      var elPop = document.getElementById('recaptcha-popup');
+      if (elPop) {
+        recaptchaPopupId = grecaptcha.render('recaptcha-popup', { 'sitekey': siteKey });
+      }
+      var elNews = document.getElementById('recaptcha-newsletter');
+      if (elNews) {
+        recaptchaNewsId = grecaptcha.render('recaptcha-newsletter', { 'sitekey': siteKey });
+      }
+    };
+  </script>
+  <script src="https://www.google.com/recaptcha/api.js?onload=onloadRecaptcha&render=explicit" async defer></script>
+
+  <!-- ========== Google Fonts: Inter ========== -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap"
+    rel="stylesheet">
+
+  <!-- ========== Custom Styles ========== -->
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body class="overflow-x-hidden w-full m-0 p-0">
+
+  <!-- ==================== WELCOME POPUP ==================== -->
+  <div id="welcome-popup"
+    class="fixed inset-0 z-[9999] flex items-center justify-center bg-black/60 opacity-0 invisible transition-all duration-500 px-4">
+    <div id="welcome-popup-content"
+      class="bg-white rounded-3xl p-8 max-w-md w-full relative shadow-2xl transform scale-95 transition-transform duration-500 text-center">
+      <button id="close-popup" class="absolute top-4 right-4 text-gray-400 hover:text-green-600 transition-colors">
+        <i class="fa-solid fa-xmark text-2xl"></i>
+      </button>
+      <div class="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-6">
+        <i class="fa-solid fa-leaf text-3xl text-green-600"></i>
+      </div>
+      <h2 class="text-2xl md:text-3xl font-extrabold text-gray-800 mb-3">
+        ¡Bienvenidos a<br><span class="text-green-600">Miradas de Alegría!</span>
+      </h2>
+      <p class="text-gray-600 mb-6 text-sm md:text-base">
+        ¿Deseas dejarnos tu correo para contactarte sobre cómo donar o enterarte de nuestras últimas acciones
+        solidarias?
+      </p>
+      <form class="flex flex-col gap-3" onsubmit="event.preventDefault(); guardarEmail('email-popup');">
+        <input type="email" id="email-popup" name="email" placeholder="Tu correo electrónico" required
+          class="w-full px-4 py-3 rounded-xl border border-gray-300 focus:outline-none focus:border-green-600 focus:ring-2 focus:ring-green-100 transition-all text-gray-700">
+        <div class="flex justify-center my-2">
+          <div id="recaptcha-popup"></div>
+        </div>
+        <button type="submit"
+          class="w-full bg-green-600 text-white font-bold py-3 rounded-xl hover:bg-green-700 transition-all transform hover:-translate-y-1 shadow-md">
+          Suscribirme
+        </button>
+      </form>
+      <button id="skip-popup"
+        class="mt-4 text-sm text-gray-400 hover:text-gray-600 underline bg-transparent border-none cursor-pointer">
+        No, gracias. Ir a la página.
+      </button>
+    </div>
+  </div>
+
+  <!-- ==================== NAVBAR ==================== -->
+  <nav id="navbar" class="navbar">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between h-[72px]">
+
+        <!-- Logo -->
+        <a href="#inicio" class="flex items-center gap-3 no-underline">
+          <div class="logo-placeholder">
+            <!-- PLACEHOLDER: Reemplazar con <img src="assets/logo.png"> -->
+            <i class="fa-solid fa-heart-pulse"></i>
+          </div>
+          <div>
+            <span class="text-lg font-extrabold text-negro-suave tracking-tight">Miradas de</span>
+            <span class="text-lg font-extrabold text-verde-bosque tracking-tight ml-1">Alegría</span>
+          </div>
+        </a>
+
+        <!-- Desktop Navigation -->
+        <div class="hidden lg:flex items-center gap-8">
+          <a href="#inicio" class="nav-link text-sm text-gray-600 hover:text-verde-bosque">Inicio</a>
+          <a href="#sobre-nosotros" class="nav-link text-sm text-gray-600 hover:text-verde-bosque">Sobre Nosotros</a>
+          <a href="#que-hacemos" class="nav-link text-sm text-gray-600 hover:text-verde-bosque">Qué Hacemos</a>
+          <a href="#impacto" class="nav-link text-sm text-gray-600 hover:text-verde-bosque">Impacto</a>
+          <a href="#contacto" class="nav-link text-sm text-gray-600 hover:text-verde-bosque">Contacto</a>
+          <a href="#" onclick="openDonationModal(); return false;"
+            class="inline-flex items-center gap-2 bg-verde-bosque text-white text-sm font-semibold px-5 py-2.5 rounded-full hover:bg-verde-bosque-dark transition-all duration-300 hover:-translate-y-0.5 shadow-md hover:shadow-lg no-underline">
+            <i class="fa-solid fa-hand-holding-heart text-xs"></i>
+            Apóyanos
+          </a>
+        </div>
+
+        <!-- Hamburger Button (Mobile) -->
+        <button id="hamburger-btn" class="hamburger lg:hidden" aria-label="Abrir menú de navegación">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ==================== MOBILE MENU ==================== -->
+  <div id="mobile-overlay" class="mobile-overlay"></div>
+  <div id="mobile-menu" class="mobile-menu">
+    <!-- Mobile menu header -->
+    <div class="flex items-center justify-between mb-8">
+      <div class="flex items-center gap-2">
+        <div class="logo-placeholder" style="width:40px;height:40px;font-size:0.9rem;">
+          <i class="fa-solid fa-heart-pulse"></i>
+        </div>
+        <span class="font-bold text-negro-suave">Miradas de Alegría</span>
+      </div>
+    </div>
+
+    <!-- Mobile links -->
+    <a href="#inicio" class="mobile-link">
+      <i class="fa-solid fa-house mr-3 text-verde-bosque"></i> Inicio
+    </a>
+    <a href="#sobre-nosotros" class="mobile-link">
+      <i class="fa-solid fa-users mr-3 text-verde-bosque"></i> Sobre Nosotros
+    </a>
+    <a href="#que-hacemos" class="mobile-link">
+      <i class="fa-solid fa-hand-holding-heart mr-3 text-verde-bosque"></i> Qué Hacemos
+    </a>
+    <a href="#impacto" class="mobile-link">
+      <i class="fa-solid fa-chart-line mr-3 text-verde-bosque"></i> Impacto
+    </a>
+    <a href="#contacto" class="mobile-link">
+      <i class="fa-solid fa-envelope mr-3 text-verde-bosque"></i> Contacto
+    </a>
+
+    <!-- Mobile CTA -->
+    <div class="mt-auto pt-6">
+      <a href="#" onclick="openDonationModal(); return false;"
+        class="flex items-center justify-center gap-2 bg-verde-bosque text-white font-semibold px-6 py-3 rounded-full hover:bg-verde-bosque-dark transition-all duration-300 no-underline w-full text-center">
+        <i class="fa-solid fa-hand-holding-heart"></i>
+        Apóyanos
+      </a>
+    </div>
+  </div>
+
+  <!-- ==================== HERO SECTION ==================== -->
+  <section id="inicio" class="hero-section">
+    <div class="hero-content" data-aos="fade-up" data-aos-duration="1000">
+      <!-- Logo placeholder en hero -->
+      <div class="hero-logo">
+        <!-- PLACEHOLDER: Reemplazar con <img src="assets/logo-white.png" alt="Logo Fundación"> -->
+        <i class="fa-solid fa-heart-pulse"></i>
+      </div>
+
+      <h1 class="hero-title" data-aos="zoom-in" data-aos-delay="200" data-aos-duration="1500">
+        Transformamos<br>
+        <span class="text-green-300 inline-block" data-aos="fade-up" data-aos-delay="500"
+          data-aos-duration="1200">Realidades</span>
+      </h1>
+
+      <p class="hero-subtitle">
+        Nuestro compromiso es transformar realidades: apoyamos a quienes más lo necesitan para que construyan un futuro
+        con dignidad, raíces y esperanza.
+      </p>
+
+      <a href="#sobre-nosotros" class="hero-btn">
+        Conoce Nuestra Misión
+        <i class="fa-solid fa-arrow-down text-sm"></i>
+      </a>
+    </div>
+
+    <!-- Scroll indicator -->
+    <div class="scroll-indicator">
+      <span></span>
+    </div>
+  </section>
+
+  <!-- ==================== NUESTRA MISIÓN ==================== -->
+  <section id="sobre-nosotros" class="mission-section py-20 md:py-28">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+      <!-- Section header -->
+      <div class="text-center mb-16" data-aos="fade-up">
+        <span class="section-badge">
+          <i class="fa-solid fa-bullseye text-xs"></i>
+          Sobre Nosotros
+        </span>
+        <h2 class="section-title">Nuestra Misión</h2>
+        <div class="section-divider"></div>
+      </div>
+
+      <!-- Mission content -->
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12">
+
+        <!-- Card 1: Misión principal -->
+        <div class="mission-card" data-aos="fade-right" data-aos-delay="100">
+          <div class="mission-icon-wrapper">
+            <i class="fa-solid fa-seedling"></i>
+          </div>
+          <h3 class="text-xl font-bold text-negro-suave mb-4">Nuestro Propósito</h3>
+          <p class="text-gray-600 leading-relaxed">
+            Nuestra organización persigue fines de beneficencia y busca mejorar la calidad de vida de las comunidades
+            más vulnerables. Trabajamos por el bienestar común, el interés social y el desarrollo sostenible en los
+            ámbitos cultural, ambiental, social, educativo y deportivo.
+          </p>
+        </div>
+
+        <!-- Card 2: Compromiso -->
+        <div class="mission-card" data-aos="fade-left" data-aos-delay="200">
+          <div class="mission-icon-wrapper" style="background: linear-gradient(135deg, #1e40af, #3b82f6);">
+            <i class="fa-solid fa-hands-holding-child"></i>
+          </div>
+          <h3 class="text-xl font-bold text-negro-suave mb-4">Nuestro Compromiso</h3>
+          <p class="text-gray-600 leading-relaxed">
+            Nuestro compromiso es transformar realidades: apoyamos a quienes más lo necesitan para que construyan un
+            futuro con dignidad, raíces y esperanza.
+          </p>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ==================== QUÉ HACEMOS ==================== -->
+  <section id="que-hacemos" class="py-20 md:py-28 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+      <!-- Section header -->
+      <div class="text-center mb-16" data-aos="fade-up">
+        <span class="section-badge">
+          <i class="fa-solid fa-hand-holding-heart text-xs"></i>
+          Nuestras Actividades
+        </span>
+        <h2 class="section-title">Qué Hacemos</h2>
+        <p class="section-subtitle mx-auto mt-4">
+          Realizamos estas actividades principales:
+        </p>
+        <div class="section-divider"></div>
+      </div>
+
+      <!-- Activity Cards Grid (5 cards) -->
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
+
+        <!-- Card 1: Infraestructura -->
+        <div class="activity-card" data-aos="fade-right" data-aos-delay="100">
+          <div class="activity-icon">
+            <i class="fa-solid fa-building-columns"></i>
+          </div>
+          <h3>Infraestructura Comunitaria</h3>
+          <p>Apoyo económico y técnico a infraestructura en comunidades vulnerables o con poca presencia del Estado.</p>
+        </div>
+
+        <!-- Card 2: Proyectos Culturales -->
+        <div class="activity-card" data-aos="fade-down" data-aos-delay="200">
+          <div class="activity-icon">
+            <i class="fa-solid fa-masks-theater"></i>
+          </div>
+          <h3>Proyectos Culturales y Productivos</h3>
+          <p>Acompañamos a las comunidades en el diseño y ejecución de proyectos culturales y productivos que conservan
+            sus raíces, su cultura y el medio ambiente.</p>
+        </div>
+
+        <!-- Card 3: Emprendimiento -->
+        <div class="activity-card" data-aos="fade-left" data-aos-delay="300">
+          <div class="activity-icon">
+            <i class="fa-solid fa-store"></i>
+          </div>
+          <h3>Emprendimiento y Formación</h3>
+          <p>Apoyamos a pequeños emprendedores con formación empresarial, educación, turismo responsable y cuidado
+            ambiental.</p>
+        </div>
+
+        <!-- Card 4: Asesoría Legal y Salud -->
+        <div class="activity-card" data-aos="fade-up-right" data-aos-delay="100">
+          <div class="activity-icon">
+            <i class="fa-solid fa-scale-balanced"></i>
+          </div>
+          <h3>Asesoría Legal y Salud Emocional</h3>
+          <p>Brindamos servicios gratuitos de asesoría legal (sin representación judicial), promoción de derechos
+            humanos y apoyo en salud emocional mediante brigadas y clínicas en comunidades de escasos recursos.</p>
+        </div>
+
+        <!-- Card 5: Deporte y Educación -->
+        <div class="activity-card" data-aos="fade-up-left" data-aos-delay="200">
+          <div class="activity-icon">
+            <i class="fa-solid fa-futbol"></i>
+          </div>
+          <h3>Deporte y Educación Juvenil</h3>
+          <p>Facilitamos el estudio y la práctica deportiva de niños y jóvenes de escasos recursos, cumpliendo con los
+            requisitos de cada programa.</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== APOYO A COMUNIDADES VULNERABLES ==================== -->
+  <section id="impacto" class="community-section py-20 md:py-28">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+
+      <!-- Section header -->
+      <div class="text-center mb-16" data-aos="fade-up">
+        <span class="section-badge">
+          <i class="fa-solid fa-people-group text-xs"></i>
+          Nuestro Impacto
+        </span>
+        <h2 class="section-title !text-white">Apoyo a las Comunidades Vulnerables</h2>
+        <div class="section-divider" style="background: linear-gradient(90deg, #22c55e, #60a5fa);"></div>
+      </div>
+
+      <!-- Content layout -->
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+
+        <!-- Text content -->
+        <div data-aos="fade-right" data-aos-delay="100">
+          <p class="text-lg text-white/90 leading-relaxed mb-6">
+            Nos enfocamos en las zonas donde más se necesita. Ayudamos a fortalecer la infraestructura básica,
+            impulsamos proyectos productivos y culturales que protegen el medio ambiente y conservan las tradiciones, y
+            generamos oportunidades sostenibles que respetan la identidad de cada comunidad.
+          </p>
+
+          <!-- Feature highlights -->
+          <div class="space-y-4 mt-8">
+            <div class="flex items-start gap-4">
+              <div class="w-10 h-10 min-w-[40px] bg-white/10 backdrop-blur rounded-xl flex items-center justify-center">
+                <i class="fa-solid fa-hammer text-green-300"></i>
+              </div>
+              <div>
+                <h4 class="text-white font-semibold mb-1">Infraestructura Básica</h4>
+                <p class="text-white/70 text-sm">Fortalecemos la infraestructura donde más se necesita.</p>
+              </div>
+            </div>
+
+            <div class="flex items-start gap-4">
+              <div class="w-10 h-10 min-w-[40px] bg-white/10 backdrop-blur rounded-xl flex items-center justify-center">
+                <i class="fa-solid fa-leaf text-green-300"></i>
+              </div>
+              <div>
+                <h4 class="text-white font-semibold mb-1">Medio Ambiente</h4>
+                <p class="text-white/70 text-sm">Protegemos el medio ambiente y conservamos las tradiciones.</p>
+              </div>
+            </div>
+
+            <div class="flex items-start gap-4">
+              <div class="w-10 h-10 min-w-[40px] bg-white/10 backdrop-blur rounded-xl flex items-center justify-center">
+                <i class="fa-solid fa-handshake text-green-300"></i>
+              </div>
+              <div>
+                <h4 class="text-white font-semibold mb-1">Oportunidades Sostenibles</h4>
+                <p class="text-white/70 text-sm">Generamos oportunidades que respetan la identidad de cada comunidad.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Imagen Real 1: Comunidad Limpiando -->
+        <div data-aos="fade-left" data-aos-delay="200" class="group">
+          <!-- FIX SAFARI: -webkit-mask-image evita que el hover rompa el borde redondeado en Safari/iOS -->
+          <div class="rounded-3xl overflow-hidden shadow-2xl relative block"
+            style="-webkit-mask-image: -webkit-radial-gradient(white, black); mask-image: radial-gradient(white, black); transform: translateZ(0);">
+            <!-- NOTA: Usando el nombre de archivo real -->
+            <img src="assets/ejemplo%20de%20pagina.jpg" alt="Comunidad colaborando" loading="lazy" decoding="async"
+              class="w-full h-full object-cover aspect-[4/3] transform transition-transform duration-700 group-hover:scale-110">
+            <!-- Filtro sutil para que se integre a los colores -->
+            <div
+              class="absolute inset-0 bg-verde-bosque/10 mix-blend-multiply group-hover:bg-transparent transition-all duration-500">
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== EDUCACIÓN, DEPORTE Y DESARROLLO ==================== -->
+  <section class="education-section py-20 md:py-28">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+      <!-- Section header -->
+      <div class="text-center mb-16" data-aos="fade-up">
+        <span class="section-badge">
+          <i class="fa-solid fa-graduation-cap text-xs"></i>
+          Desarrollo Integral
+        </span>
+        <h2 class="section-title">Educación, Deporte y Desarrollo Humano</h2>
+        <div class="section-divider"></div>
+      </div>
+
+      <!-- Content -->
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+
+        <!-- Imagen Real 2: Banco de Alimentos -->
+        <div data-aos="fade-right" data-aos-delay="100" class="group">
+          <!-- FIX SAFARI: Hardware acceleration y máscara para los bordes -->
+          <div class="rounded-3xl overflow-hidden shadow-2xl relative block border-4 border-white"
+            style="-webkit-mask-image: -webkit-radial-gradient(white, black); mask-image: radial-gradient(white, black); transform: translateZ(0);">
+            <!-- NOTA: Usando el nombre de archivo real -->
+            <img src="assets/ejemplo%20de%20pagina%20web.jpg" alt="Banco de alimentos y apoyo" loading="lazy"
+              decoding="async"
+              class="w-full h-full object-cover aspect-[4/3] transform transition-transform duration-700 group-hover:scale-110">
+          </div>
+        </div>
+
+        <!-- Text content -->
+        <div data-aos="fade-left" data-aos-delay="200">
+          <p class="text-lg text-gray-600 leading-relaxed mb-8">
+            Creemos que la educación y el deporte cambian vidas. Por eso apoyamos a estudiantes y deportistas de escasos
+            recursos, formamos pequeños emprendedores y promovemos la educación para el trabajo con un enfoque
+            responsable, humano y sostenible.
+          </p>
+
+          <!-- Features list -->
+          <div class="space-y-3">
+            <div class="education-feature">
+              <div class="feature-icon">
+                <i class="fa-solid fa-book-open"></i>
+              </div>
+              <div>
+                <h4 class="font-semibold text-negro-suave text-sm mb-1">Apoyo Estudiantil</h4>
+                <p class="text-gray-500 text-sm">Apoyamos a estudiantes de escasos recursos para que continúen su
+                  formación.</p>
+              </div>
+            </div>
+
+            <div class="education-feature">
+              <div class="feature-icon">
+                <i class="fa-solid fa-medal"></i>
+              </div>
+              <div>
+                <h4 class="font-semibold text-negro-suave text-sm mb-1">Práctica Deportiva</h4>
+                <p class="text-gray-500 text-sm">Facilitamos la práctica deportiva de niños y jóvenes con dedicación.
+                </p>
+              </div>
+            </div>
+
+            <div class="education-feature">
+              <div class="feature-icon">
+                <i class="fa-solid fa-briefcase"></i>
+              </div>
+              <div>
+                <h4 class="font-semibold text-negro-suave text-sm mb-1">Formación Empresarial</h4>
+                <p class="text-gray-500 text-sm">Formamos pequeños emprendedores con un enfoque responsable y humano.
+                </p>
+              </div>
+            </div>
+
+            <div class="education-feature">
+              <div class="feature-icon">
+                <i class="fa-solid fa-earth-americas"></i>
+              </div>
+              <div>
+                <h4 class="font-semibold text-negro-suave text-sm mb-1">Educación Sostenible</h4>
+                <p class="text-gray-500 text-sm">Promovemos la educación para el trabajo con enfoque sostenible.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== CALCULADORA DE IMPACTO ==================== -->
+  <section class="py-20 bg-verde-bosque relative overflow-hidden">
+    <div class="absolute inset-0 opacity-10">
+      <!-- Decorative background -->
+      <svg class="w-full h-full" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" preserveAspectRatio="none">
+        <path fill="white" d="M0 100 C 20 0 50 0 100 100 Z" />
+      </svg>
+    </div>
+    <div class="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center" data-aos="fade-up">
+      <h2 class="text-3xl md:text-5xl font-extrabold text-white mb-4">Calcula tu Impacto Real</h2>
+      <p class="text-white/80 text-lg mb-10">Mueve el control para descubrir exactamente cómo tu aporte transforma vidas
+        hoy.</p>
+
+      <div class="bg-white rounded-3xl p-8 md:p-12 shadow-2xl mx-auto w-full max-w-2xl relative">
+        <!-- Selector de Moneda -->
+        <div class="absolute top-6 right-6 md:top-8 md:right-8">
+          <select id="calc-currency-selector" aria-label="Seleccionar moneda de calculadora"
+            class="border border-gray-200 text-gray-600 rounded-lg py-1 px-3 text-sm focus:outline-none focus:border-verde-bosque font-semibold shadow-sm bg-gray-50">
+            <option value="CRC">CRC (₡)</option>
+            <option value="USD">USD ($)</option>
+          </select>
+        </div>
+
+        <h3 class="text-xl text-gray-500 font-semibold mb-2 mt-4 md:mt-0">Tu Donación Mensual:</h3>
+        <div class="text-5xl font-extrabold text-negro-suave mb-8" id="calc-amount-display">₡10,000</div>
+
+        <input type="range" min="1000" max="100000" step="1000" value="10000" class="impact-slider mb-10"
+          id="impact-slider">
+
+        <div class="grid grid-cols-2 gap-6 text-left">
+          <div class="bg-blue-50 p-6 rounded-2xl border border-blue-100 flex items-start gap-4">
+            <div class="w-12 h-12 bg-white rounded-full flex items-center justify-center flex-shrink-0 shadow-sm">
+              <i class="fa-solid fa-graduation-cap text-azul-confianza text-xl"></i>
+            </div>
+            <div>
+              <div class="text-2xl font-black text-azul-confianza" id="calc-kits">2</div>
+              <div class="text-sm font-semibold text-gray-600">Kits Escolares Completos</div>
+            </div>
+          </div>
+
+          <div class="bg-green-50 p-6 rounded-2xl border border-green-100 flex items-start gap-4">
+            <div class="w-12 h-12 bg-white rounded-full flex items-center justify-center flex-shrink-0 shadow-sm">
+              <i class="fa-solid fa-bowl-food text-verde-bosque text-xl"></i>
+            </div>
+            <div>
+              <div class="text-2xl font-black text-verde-bosque" id="calc-meals">15</div>
+              <div class="text-sm font-semibold text-gray-600">Platos de Comida Caliente</div>
+            </div>
+          </div>
+        </div>
+
+        <button
+          onclick="document.getElementById('custom-amount').value = document.getElementById('impact-slider').value; document.getElementById('currency-selector').value = document.getElementById('calc-currency-selector').value; updateCurrencySymbols(); openDonationModal();"
+          class="mt-8 bg-verde-bosque text-white font-bold py-4 px-8 rounded-xl w-full hover:bg-verde-bosque-dark transition-colors shadow-lg">
+          ¡Hacer este impacto realidad!
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== COMPROMISO Y FORMA DE OPERAR ==================== -->
+  <section class="py-20 md:py-28 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+      <!-- Section header -->
+      <div class="text-center mb-16" data-aos="fade-up">
+        <span class="section-badge">
+          <i class="fa-solid fa-shield-halved text-xs"></i>
+          Transparencia
+        </span>
+        <h2 class="section-title">Nuestro Compromiso y Forma de Operar</h2>
+        <p class="section-subtitle mx-auto mt-4">
+          Para cumplir nuestra misión:
+        </p>
+        <div class="section-divider"></div>
+      </div>
+
+      <!-- Fund Distribution Visual -->
+      <div class="bg-gray-50 rounded-3xl p-8 md:p-12 mb-16 shadow-inner border border-gray-100 mx-auto max-w-5xl"
+        data-aos="zoom-in" data-aos-delay="100">
+        <h3 class="text-xl md:text-2xl font-bold text-center text-negro-suave mb-10">¿Hacia dónde van tus donaciones?
+        </h3>
+
+        <div class="flex flex-col md:flex-row gap-10 items-center justify-center">
+
+          <!-- Grafico Barras Modernas -->
+          <div class="w-full md:w-3/5 space-y-6">
+
+            <div class="space-y-2">
+              <div class="flex justify-between items-end">
+                <span class="font-bold text-gray-700 flex items-center gap-2"><i
+                    class="fa-solid fa-hand-holding-heart text-verde-bosque"></i> Programas de Ayuda Directa</span>
+                <span class="text-xl font-extrabold text-verde-bosque">85%</span>
+              </div>
+              <div class="w-full bg-gray-200 rounded-full h-3">
+                <div class="bg-verde-bosque h-3 rounded-full" style="width: 85%"></div>
+              </div>
+            </div>
+
+            <div class="space-y-2">
+              <div class="flex justify-between items-end">
+                <span class="font-bold text-gray-700 flex items-center gap-2"><i
+                    class="fa-solid fa-truck-fast text-azul-confianza"></i> Logística y Operación</span>
+                <span class="text-xl font-extrabold text-azul-confianza">10%</span>
+              </div>
+              <div class="w-full bg-gray-200 rounded-full h-3">
+                <div class="bg-azul-confianza h-3 rounded-full" style="width: 10%"></div>
+              </div>
+            </div>
+
+            <div class="space-y-2">
+              <div class="flex justify-between items-end">
+                <span class="font-bold text-gray-700 flex items-center gap-2"><i
+                    class="fa-solid fa-building text-gray-500"></i> Gastos Administrativos</span>
+                <span class="text-xl font-extrabold text-gray-500">5%</span>
+              </div>
+              <div class="w-full bg-gray-200 rounded-full h-3">
+                <div class="bg-gray-400 h-3 rounded-full" style="width: 5%"></div>
+              </div>
+            </div>
+
+          </div>
+
+          <div class="w-full md:w-2/5 md:pl-10 md:border-l border-gray-200">
+            <h4 class="font-bold text-gray-800 mb-2">Impacto Garantizado</h4>
+            <p class="text-sm text-gray-600 mb-6 leading-relaxed">Maximizamos cada colón recibido. Mantenemos una
+              estructura ligera de oficinas para que tus aportes lleguen directamente a las manos que más lo necesitan.
+            </p>
+            <a href="#"
+              class="inline-flex items-center gap-2 border-2 border-verde-bosque text-verde-bosque font-bold px-5 py-2.5 rounded-xl hover:bg-green-50 transition-colors w-full justify-center md:w-auto shadow-sm">
+              <i class="fa-solid fa-file-pdf"></i>
+              Informe Anual 2025
+            </a>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- Commitment cards -->
+      <h3 class="text-2xl font-bold text-center text-negro-suave mb-10" data-aos="fade-up">Nuestros Pilares</h3>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8">
+
+        <!-- Card 1 -->
+        <div class="commitment-card" data-aos="fade-right" data-aos-delay="100">
+          <div class="card-number">01</div>
+          <h3 class="text-base font-bold text-negro-suave mb-3">Eventos y Alianzas</h3>
+          <p class="text-gray-600 text-sm leading-relaxed">
+            Organizamos eventos, celebramos alianzas nacionales e internacionales y apoyamos ideas que compartan
+            nuestros valores.
+          </p>
+        </div>
+
+        <!-- Card 2 -->
+        <div class="commitment-card" data-aos="fade-up" data-aos-delay="200">
+          <div class="card-number">02</div>
+          <h3 class="text-base font-bold text-negro-suave mb-3">Financiación Sostenible</h3>
+          <p class="text-gray-600 text-sm leading-relaxed">
+            Diseñamos mecanismos de financiación y cofinanciación para que nuestros proyectos sean sostenibles en el
+            tiempo.
+          </p>
+        </div>
+
+        <!-- Card 3 -->
+        <div class="commitment-card" data-aos="zoom-in" data-aos-delay="300">
+          <div class="card-number">03</div>
+          <h3 class="text-base font-bold text-negro-suave mb-3">Trabajo Colaborativo</h3>
+          <p class="text-gray-600 text-sm leading-relaxed">
+            Trabajamos de la mano con otras organizaciones, comunidades, sector privado y entidades sin ánimo de lucro
+            mediante convenios, consorcios y uniones temporales.
+          </p>
+        </div>
+
+        <!-- Card 4 -->
+        <div class="commitment-card" data-aos="fade-left" data-aos-delay="400">
+          <div class="card-number">04</div>
+          <h3 class="text-base font-bold text-negro-suave mb-3">Evaluación y Resultados</h3>
+          <p class="text-gray-600 text-sm leading-relaxed">
+            Ejecutamos, administramos y evaluamos planes y programas con el único objetivo de generar bienestar integral
+            para las personas y las comunidades que servimos.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== VOLUNTARIADO BANNER ==================== -->
+  <section class="relative py-24 bg-negro-suave flex items-center justify-center">
+    <!-- Imagen de fondo oscura -->
+    <div class="absolute inset-0 z-0">
+      <img
+        src="https://images.unsplash.com/photo-1593113563332-61f238563c6d?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80"
+        alt="Voluntarios ayudando" loading="lazy" decoding="async" class="w-full h-full object-cover opacity-30">
+    </div>
+    <div class="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center" data-aos="zoom-in">
+      <span
+        class="inline-block bg-white/20 backdrop-blur-md text-white px-5 py-2 rounded-full text-xs font-bold uppercase tracking-widest mb-6 border border-white/30 shadow-sm">
+        <i class="fa-solid fa-hands-holding-child mr-2"></i>Programa de Voluntariado
+      </span>
+      <h2 class="text-3xl md:text-5xl font-extrabold text-white mb-6 leading-tight">No solo necesitamos
+        recursos,<br>necesitamos tus manos.</h2>
+      <p class="text-lg text-gray-300 md:px-12 mb-10 leading-relaxed">Únete a nuestra vibrante red de héroes anónimos.
+        Buscamos profesionales, estudiantes y cualquier persona con vocación de servicio dispuesta a cambiar vidas.</p>
+
+      <button onclick="document.getElementById('contact-reason').value = 'Quiero ser voluntario'; openContactModal();"
+        class="inline-flex items-center justify-center gap-3 bg-white text-negro-suave border-none font-extrabold px-8 py-4 rounded-xl hover:bg-green-50 hover:text-verde-bosque transition-all transform hover:-translate-y-1 shadow-2xl text-lg group w-full sm:w-auto">
+        Quiero ser voluntario/a
+        <i class="fa-solid fa-arrow-right group-hover:translate-x-1 transition-transform"></i>
+      </button>
+    </div>
+  </section>
+
+  <!-- ==================== ÚLTIMAS NOTICIAS / BLOG ==================== -->
+  <section class="py-20 md:py-28 bg-gray-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+      <div class="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-4" data-aos="fade-up">
+        <div>
+          <span class="section-badge">
+            <i class="fa-regular fa-newspaper text-xs"></i>
+            Actualidad
+          </span>
+          <h2 class="section-title mb-0 !text-left">Historias de Impacto</h2>
+        </div>
+        <a href="#" class="text-verde-bosque font-bold hover:underline flex items-center gap-2 group">Ver todas las
+          noticias <i class="fa-solid fa-chevron-right text-xs group-hover:translate-x-1 transition-transform"></i></a>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <!-- Tarjeta 1 -->
+        <article
+          class="bg-white rounded-3xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 group"
+          data-aos="fade-up" data-aos-delay="100">
+          <div class="h-56 overflow-hidden relative">
+            <img
+              src="https://images.unsplash.com/photo-1542838132-92c53300491e?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+              alt="Entrega de alimentos" loading="lazy" decoding="async"
+              class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+            <span
+              class="absolute top-4 left-4 bg-white/90 backdrop-blur text-verde-bosque text-xs font-bold px-3 py-1.5 rounded-full shadow-sm">Proyectos</span>
+          </div>
+          <div class="p-6 md:p-8">
+            <p class="text-xs text-gray-500 mb-3 font-semibold uppercase tracking-wider"><i
+                class="fa-regular fa-calendar-days mr-1 text-verde-bosque"></i> 12 Marzo, 2026</p>
+            <h3
+              class="text-xl font-bold text-gray-800 mb-3 leading-tight group-hover:text-verde-bosque transition-colors">
+              Entrega de suministros en comunidad rural</h3>
+            <p class="text-sm text-gray-600 mb-6 line-clamp-3 leading-relaxed">Logramos llevar alimentación de alta
+              calidad y kits de aseo a más de 50 familias de la zona gracias al impacto directo del programa de
+              padrinazgo de este mes.</p>
+            <a href="#" class="font-bold text-verde-bosque text-sm flex items-center gap-1 group-hover:underline">Leer
+              historia completa <i class="fa-solid fa-arrow-right-long text-xs ml-1"></i></a>
+          </div>
+        </article>
+
+        <!-- Tarjeta 2 -->
+        <article
+          class="bg-white rounded-3xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 group"
+          data-aos="fade-up" data-aos-delay="200">
+          <div class="h-56 overflow-hidden relative">
+            <img
+              src="https://images.unsplash.com/photo-1560252829-804f1aedf1be?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+              alt="Nueva alianza" loading="lazy" decoding="async"
+              class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+            <span
+              class="absolute top-4 left-4 bg-white/90 backdrop-blur text-azul-confianza text-xs font-bold px-3 py-1.5 rounded-full shadow-sm">Alianzas</span>
+          </div>
+          <div class="p-6 md:p-8">
+            <p class="text-xs text-gray-500 mb-3 font-semibold uppercase tracking-wider"><i
+                class="fa-regular fa-calendar-days mr-1 text-azul-confianza"></i> 28 Febrero, 2026</p>
+            <h3
+              class="text-xl font-bold text-gray-800 mb-3 leading-tight group-hover:text-azul-confianza transition-colors">
+              Firmamos el gran convenio con Empresas Unidas</h3>
+            <p class="text-sm text-gray-600 mb-6 line-clamp-3 leading-relaxed">Iniciamos una colaboración robusta de 2
+              años continuos que nos permitirá financiar integralmente el taller de emprendedurismo local para jóvenes
+              estudiantes.</p>
+            <a href="#" class="font-bold text-azul-confianza text-sm flex items-center gap-1 group-hover:underline">Leer
+              historia completa <i class="fa-solid fa-arrow-right-long text-xs ml-1"></i></a>
+          </div>
+        </article>
+
+        <!-- Tarjeta 3 -->
+        <article
+          class="bg-white rounded-3xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 group"
+          data-aos="fade-up" data-aos-delay="300">
+          <div class="h-56 overflow-hidden relative">
+            <img
+              src="https://images.unsplash.com/photo-1529390079861-591de354faf5?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+              alt="Día de la niñez" loading="lazy" decoding="async"
+              class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+            <span
+              class="absolute top-4 left-4 bg-white/90 backdrop-blur text-pink-500 text-xs font-bold px-3 py-1.5 rounded-full shadow-sm">Eventos</span>
+          </div>
+          <div class="p-6 md:p-8">
+            <p class="text-xs text-gray-500 mb-3 font-semibold uppercase tracking-wider"><i
+                class="fa-regular fa-calendar-days mr-1 text-pink-500"></i> 15 Enero, 2026</p>
+            <h3 class="text-xl font-bold text-gray-800 mb-3 leading-tight group-hover:text-pink-500 transition-colors">
+              Celebración inmensa del Día de la Niñez</h3>
+            <p class="text-sm text-gray-600 mb-6 line-clamp-3 leading-relaxed">Más de 200 niños de distintas comunidades
+              rurales disfrutaron de una jornada espectacular llena de juegos interactivos, educación lúdica y grandes
+              sorpresas infantiles.</p>
+            <a href="#" class="font-bold text-pink-500 text-sm flex items-center gap-1 group-hover:underline">Leer
+              historia completa <i class="fa-solid fa-arrow-right-long text-xs ml-1"></i></a>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ==================== FAQ ACCORDION ==================== -->
+  <section class="py-20 md:py-28 bg-white">
+    <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-12" data-aos="fade-up">
+        <h2 class="text-3xl md:text-4xl font-extrabold text-negro-suave mb-4">Preguntas Frecuentes</h2>
+        <p class="text-gray-500">¿Tienes dudas antes de donar? Aquí te las resolvemos.</p>
+      </div>
+
+      <div class="space-y-4" data-aos="fade-up" data-aos-delay="100">
+        <!-- FAQ 1 -->
+        <details class="faq-item rounded-2xl group" open>
+          <summary
+            class="flex justify-between items-center font-bold text-negro-suave text-lg p-6 bg-gray-50 rounded-2xl group-open:bg-white group-open:rounded-b-none">
+            ¿Mi donación es deducible de impuestos?
+            <i class="fa-solid fa-plus faq-icon text-gray-400"></i>
+          </summary>
+          <div class="p-6 pt-0 text-gray-600 bg-white rounded-b-2xl border-t border-gray-100 leading-relaxed">
+            Absolutamente. Somos una entidad registrada oficialmente como organización sin fines de lucro. Tras realizar
+            tu donativo, puedes solicitar tu recibo oficial en el formulario de contacto para deducirlo de tus cargas
+            fiscales.
+          </div>
+        </details>
+
+        <!-- FAQ 2 -->
+        <details class="faq-item rounded-2xl group">
+          <summary
+            class="flex justify-between items-center font-bold text-negro-suave text-lg p-6 bg-gray-50 rounded-2xl group-open:bg-white group-open:rounded-b-none">
+            ¿Puedo donar insumos o ropa en lugar de dinero?
+            <i class="fa-solid fa-plus faq-icon text-gray-400"></i>
+          </summary>
+          <div class="p-6 pt-0 text-gray-600 bg-white rounded-b-2xl border-t border-gray-100 leading-relaxed">
+            ¡Sí! Organizamos campañas de recolección físicas tres veces al año. Frecuentemente recibimos alimentos no
+            perecederos, ropa en buen estado y material escolar. Contáctanos por WhatsApp para indicarte nuestro centro
+            de acopio más cercano.
+          </div>
+        </details>
+
+        <!-- FAQ 3 -->
+        <details class="faq-item rounded-2xl group">
+          <summary
+            class="flex justify-between items-center font-bold text-negro-suave text-lg p-6 bg-gray-50 rounded-2xl group-open:bg-white group-open:rounded-b-none">
+            ¿Es seguro donar a través de la página web?
+            <i class="fa-solid fa-plus faq-icon text-gray-400"></i>
+          </summary>
+          <div class="p-6 pt-0 text-gray-600 bg-white rounded-b-2xl border-t border-gray-100 leading-relaxed">
+            Completamente seguro. No almacenamos ningún dato bancario. Al elegir pago con tarjeta o PayPal, la
+            plataforma te redirigirá a sistemas de pago cifrados a nivel internacional que protegen tus datos
+            financieros en todo momento.
+          </div>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== CTA SECTION ==================== -->
+  <section id="contacto" class="cta-section py-20 md:py-28">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <div data-aos="zoom-in" data-aos-duration="1000">
+        <div class="w-20 h-20 bg-white/10 backdrop-blur rounded-2xl flex items-center justify-center mx-auto mb-8">
+          <i class="fa-solid fa-hand-holding-heart text-3xl text-white"></i>
+        </div>
+
+        <h2 class="text-3xl md:text-4xl font-extrabold text-white mb-6 leading-tight">
+          ¿Quieres unirte a<br>nuestra causa?
+        </h2>
+
+        <p class="text-lg text-white/80 mb-10 max-w-xl mx-auto leading-relaxed">
+          Cada aporte, cada mano amiga, cada alianza cuenta. Juntos podemos transformar realidades y construir un futuro
+          con dignidad para quienes más lo necesitan.
+        </p>
+
+        <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+          <a href="#" onclick="openDonationModal(); return false;" class="cta-btn cta-btn-primary">
+            <i class="fa-solid fa-heart"></i>
+            Quiero Donar
+          </a>
+          <a href="#" onclick="openContactModal(); return false;" class="cta-btn cta-btn-outline">
+            <i class="fa-solid fa-envelope"></i>
+            Contáctanos
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== NEWSLETTER SECTION ==================== -->
+  <section class="py-16 bg-white border-t border-gray-50">
+    <div class="container mx-auto px-4">
+      <div
+        class="max-w-4xl mx-auto bg-green-50 rounded-3xl p-8 md:p-12 border-2 border-verde-bosque/10 shadow-xl text-center"
+        data-aos="fade-up">
+        <div
+          class="inline-flex items-center justify-center w-16 h-16 bg-white rounded-2xl shadow-sm mb-6 font-bold text-verde-bosque">
+          <i class="fa-solid fa-envelope-open-text text-3xl"></i>
+        </div>
+        <h2 class="text-3xl font-extrabold text-negro-suave mb-4">Suscríbete a nuestra causa</h2>
+        <p class="text-gray-600 mb-8 max-w-2xl mx-auto italic">"Recibe noticias, oportunidades de voluntariado y formas
+          de ayudar a quienes más lo necesitan."</p>
+
+        <form onsubmit="event.preventDefault(); guardarEmail('email-news');"
+          class="flex flex-col gap-4 max-w-lg mx-auto">
+          <input type="email" id="email-news" name="email" placeholder="tu@email.com" required
+            class="flex-1 px-6 py-4 rounded-xl border-2 border-gray-100 focus:border-verde-bosque focus:ring-2 focus:ring-green-100 outline-none transition-all text-lg font-medium">
+
+          <div class="flex justify-center">
+            <div id="recaptcha-newsletter"></div>
+          </div>
+
+          <button type="submit"
+            class="px-8 py-4 bg-verde-bosque text-white font-bold rounded-xl hover:bg-verde-bosque-dark transition-all shadow-lg hover:-translate-y-1 text-lg whitespace-nowrap">
+            Suscribirme
+          </button>
+        </form>
+
+        <p class="text-xs text-gray-500 mt-6 flex items-center justify-center gap-2">
+          <i class="fa-solid fa-shield-halved"></i> Solo guardamos tu correo electrónico. Nunca enviamos spam.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== FOOTER ==================== -->
+  <footer class="footer py-16">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 mb-12">
+
+        <!-- Column 1: About -->
+        <div>
+          <div class="flex items-center gap-3 mb-5">
+            <div class="logo-placeholder" style="width:40px;height:40px;font-size:0.85rem;">
+              <i class="fa-solid fa-heart-pulse"></i>
+            </div>
+            <div>
+              <span class="text-white font-bold">Miradas</span>
+              <span class="text-green-400 font-bold ml-1">de Alegría</span>
+            </div>
+          </div>
+          <p class="text-sm text-white/60 leading-relaxed">
+            Transformamos realidades apoyando a quienes más lo necesitan para que construyan un futuro con dignidad,
+            raíces y esperanza.
+          </p>
+        </div>
+
+        <!-- Column 2: Quick Links -->
+        <div>
+          <h4 class="text-white font-semibold text-sm mb-5 uppercase tracking-wider">Enlaces</h4>
+          <ul class="space-y-3">
+            <li><a href="#inicio" class="text-sm hover:text-green-400">Inicio</a></li>
+            <li><a href="#sobre-nosotros" class="text-sm hover:text-green-400">Sobre Nosotros</a></li>
+            <li><a href="#que-hacemos" class="text-sm hover:text-green-400">Qué Hacemos</a></li>
+            <li><a href="#impacto" class="text-sm hover:text-green-400">Impacto</a></li>
+            <li><a href="#contacto" class="text-sm hover:text-green-400">Contacto</a></li>
+          </ul>
+        </div>
+
+        <!-- Column 3: Contact -->
+        <div>
+          <h4 class="text-white font-semibold text-sm mb-5 uppercase tracking-wider">Contacto</h4>
+          <ul class="space-y-3">
+            <li class="flex items-center gap-3 text-sm">
+              <i class="fa-solid fa-envelope text-green-400 text-xs"></i>
+              <span>info@miradasdealegria.org</span>
+            </li>
+            <li class="flex items-center gap-3 text-sm">
+              <i class="fa-solid fa-phone text-green-400 text-xs"></i>
+              <span>+57 (1) 234-5678</span>
+            </li>
+            <li class="flex items-start gap-3 text-sm">
+              <i class="fa-solid fa-location-dot text-green-400 text-xs mt-1"></i>
+              <span>Ciudad, País — Latinoamérica</span>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Column 4: Social -->
+        <div>
+          <h4 class="text-white font-semibold text-sm mb-5 uppercase tracking-wider">Síguenos</h4>
+          <div class="flex items-center gap-3">
+            <!-- PLACEHOLDER: Reemplazar # con URLs reales de redes sociales -->
+            <a href="#" class="footer-social-icon" aria-label="Facebook">
+              <i class="fa-brands fa-facebook-f"></i>
+            </a>
+            <a href="#" class="footer-social-icon" aria-label="Instagram">
+              <i class="fa-brands fa-instagram"></i>
+            </a>
+            <a href="#" class="footer-social-icon" aria-label="Twitter / X">
+              <i class="fa-brands fa-x-twitter"></i>
+            </a>
+            <a href="#" class="footer-social-icon" aria-label="YouTube">
+              <i class="fa-brands fa-youtube"></i>
+            </a>
+            <a href="#" class="footer-social-icon" aria-label="LinkedIn">
+              <i class="fa-brands fa-linkedin-in"></i>
+            </a>
+          </div>
+          <p class="text-xs text-white/40 mt-5">
+            Conecta con nosotros en redes sociales y conoce más sobre nuestras iniciativas.
+          </p>
+        </div>
+      </div>
+
+      <!-- Footer bottom -->
+      <hr class="footer-divider mb-8">
+      <div class="flex flex-col md:flex-row items-center justify-between gap-4">
+        <p class="text-sm text-white/50">
+          &copy; 2026 Miradas de Alegría. Todos los derechos reservados.
+        </p>
+        <div class="flex items-center gap-6">
+          <a href="#" class="text-xs text-white/40 hover:text-white/70">Política de Privacidad</a>
+          <a href="#" class="text-xs text-white/40 hover:text-white/70">Términos de Uso</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ==================== BACK TO TOP BUTTON ==================== -->
+  <button id="back-to-top" class="back-to-top" aria-label="Volver arriba">
+    <i class="fa-solid fa-arrow-up"></i>
+  </button>
+
+  <!-- ==================== WHATSAPP FLOTANTE ==================== -->
+  <a href="https://wa.me/50612345678" target="_blank" rel="noopener noreferrer"
+    class="fixed bottom-6 left-6 bg-[#25D366] text-white w-14 h-14 rounded-full flex items-center justify-center text-3xl shadow-lg hover:scale-110 hover:bg-[#1ebe57] transition-all z-[100] group"
+    aria-label="Escríbenos por WhatsApp">
+    <i class="fa-brands fa-whatsapp relative z-10"></i>
+    <!-- Efecto de "ping" o latido detrás del botón -->
+    <span class="absolute inset-0 rounded-full bg-[#25D366] opacity-40 group-hover:animate-ping"></span>
+  </a>
+
+  <!-- ==================== DONATION MODAL ==================== -->
+  <div id="donation-modal"
+    class="fixed inset-0 z-[9999] flex items-center justify-center bg-black/60 opacity-0 invisible transition-all duration-300 px-4">
+    <div id="donation-modal-content"
+      class="bg-white rounded-3xl p-6 md:p-8 max-w-lg w-full relative shadow-2xl transform scale-95 transition-transform duration-300 max-h-[90vh] overflow-y-auto">
+      <button id="close-donation-modal"
+        class="absolute top-4 right-4 text-gray-400 hover:text-verde-bosque transition-colors">
+        <i class="fa-solid fa-xmark text-2xl"></i>
+      </button>
+
+      <!-- Mantiene el contenido original visible al inicio -->
+      <div id="donation-main-view">
+        <div class="text-center mb-6">
+          <h2 class="text-2xl font-extrabold text-negro-suave mb-2">Haz una diferencia hoy</h2>
+          <p class="text-gray-600 text-sm">Tu donación nos ayuda a transformar realidades.</p>
+        </div>
+
+        <!-- Barra de Progreso (Ficticia) -->
+        <div class="mb-6 bg-gray-50 p-4 rounded-2xl border border-gray-100">
+          <div class="flex justify-between text-sm mb-2 font-semibold">
+            <span class="text-verde-bosque">Llevamos: $650</span>
+            <span class="text-gray-500">Meta: $1000</span>
+          </div>
+          <div class="w-full bg-gray-200 rounded-full h-2.5">
+            <div class="bg-verde-bosque h-2.5 rounded-full" style="width: 65%"></div>
+          </div>
+          <p class="text-xs text-gray-500 text-center mt-2 font-medium">¡Con $10 alimentas a una familia entera!</p>
+        </div>
+
+        <form id="donation-form" onsubmit="event.preventDefault(); showDonationSuccess();">
+          <!-- Tipo de Donación -->
+          <div class="flex p-1 bg-gray-100 rounded-xl mb-6">
+            <button type="button" class="w-1/2 py-2 text-sm font-bold rounded-lg text-white bg-verde-bosque shadow"
+              id="btn-donacion-unica" onclick="selectDonationType('unica')">Única vez</button>
+            <button type="button" class="w-1/2 py-2 text-sm font-bold rounded-lg text-gray-600 hover:text-verde-bosque"
+              id="btn-donacion-mensual" onclick="selectDonationType('mensual')">Mensual <i
+                class="fa-solid fa-heart text-red-400 ml-1"></i></button>
+          </div>
+
+          <!-- Divisa -->
+          <div class="flex justify-between items-end mb-2">
+            <h3 class="text-sm font-bold text-gray-700">Selecciona el monto</h3>
+            <select id="currency-selector" aria-label="Seleccionar divisa donación"
+              class="text-sm font-bold text-verde-bosque bg-transparent border-none focus:outline-none cursor-pointer"
+              onchange="updateCurrencySymbols()">
+              <option value="CRC" selected>CRC (Colones)</option>
+              <option value="USD">USD (Dólares)</option>
+            </select>
+          </div>
+
+          <!-- Selección de Monto -->
+          <div class="grid grid-cols-3 gap-3 mb-4">
+            <button type="button"
+              class="monto-btn py-3 border-2 border-gray-200 text-gray-600 font-bold rounded-xl hover:border-verde-bosque hover:text-verde-bosque transition"
+              data-amount="5000" onclick="selectAmount(5000)"><span class="currency-symbol">₡</span><span
+                class="monto-val">5000</span></button>
+            <button type="button"
+              class="monto-btn py-3 border-2 border-verde-bosque text-verde-bosque font-bold rounded-xl hover:border-verde-bosque hover:text-verde-bosque transition bg-verde-bosque !text-white !border-verde-bosque"
+              data-amount="10000" onclick="selectAmount(10000)"><span class="currency-symbol">₡</span><span
+                class="monto-val">10000</span></button>
+            <button type="button"
+              class="monto-btn py-3 border-2 border-gray-200 text-gray-600 font-bold rounded-xl hover:border-verde-bosque hover:text-verde-bosque transition"
+              data-amount="25000" onclick="selectAmount(25000)"><span class="currency-symbol">₡</span><span
+                class="monto-val">25000</span></button>
+          </div>
+          <div class="mb-6">
+            <input type="number" id="custom-amount" placeholder="Otro monto"
+              class="w-full px-4 py-3 rounded-xl border-2 border-gray-200 focus:outline-none focus:border-verde-bosque focus:ring-2 focus:ring-green-100 transition-all font-medium"
+              oninput="clearAmountButtons()">
+          </div>
+
+          <!-- Métodos de Pago Visuales -->
+          <h3 class="text-sm font-bold text-gray-700 mb-3">Método de pago</h3>
+          <div class="grid grid-cols-2 md:grid-cols-4 gap-2 mb-4">
+            <label
+              class="flex flex-col items-center justify-center p-3 border-2 border-verde-bosque bg-green-50 rounded-xl cursor-pointer payment-method-lbl transition-colors"
+              id="lbl-tarjeta">
+              <input type="radio" name="payment_method" value="tarjeta" class="hidden" checked
+                onchange="selectPaymentMethod('tarjeta')">
+              <i class="fa-regular fa-credit-card text-xl text-verde-bosque mb-1" id="icon-tarjeta"></i>
+              <span class="text-xs font-bold text-verde-bosque" id="text-tarjeta">Tarjeta</span>
+            </label>
+            <label
+              class="flex flex-col items-center justify-center p-3 border-2 border-gray-200 rounded-xl cursor-pointer payment-method-lbl hover:border-verde-bosque transition-colors"
+              id="lbl-sinpe">
+              <input type="radio" name="payment_method" value="sinpe" class="hidden"
+                onchange="selectPaymentMethod('sinpe')">
+              <i class="fa-solid fa-mobile-screen text-xl text-gray-500 mb-1" id="icon-sinpe"></i>
+              <span class="text-xs font-bold text-gray-600" id="text-sinpe">Sinpe</span>
+            </label>
+            <label
+              class="flex flex-col items-center justify-center p-3 border-2 border-gray-200 rounded-xl cursor-pointer payment-method-lbl hover:border-verde-bosque transition-colors"
+              id="lbl-paypal">
+              <input type="radio" name="payment_method" value="paypal" class="hidden"
+                onchange="selectPaymentMethod('paypal')">
+              <i class="fa-brands fa-paypal text-xl text-gray-500 mb-1" id="icon-paypal"></i>
+              <span class="text-xs font-bold text-gray-600" id="text-paypal">PayPal</span>
+            </label>
+            <label
+              class="flex flex-col items-center justify-center p-3 border-2 border-gray-200 rounded-xl cursor-pointer payment-method-lbl hover:border-verde-bosque transition-colors"
+              id="lbl-stripe">
+              <input type="radio" name="payment_method" value="stripe" class="hidden"
+                onchange="selectPaymentMethod('stripe')">
+              <i class="fa-brands fa-stripe text-xl text-gray-500 mb-1" id="icon-stripe"></i>
+              <span class="text-xs font-bold text-gray-600" id="text-stripe">Stripe</span>
+            </label>
+          </div>
+
+          <!-- Payment Details Fields -->
+          <div id="payment-details-container" class="mb-6 p-4 border border-gray-200 bg-gray-50 rounded-xl">
+            <!-- Tarjeta Details -->
+            <div id="details-tarjeta" class="block">
+              <div class="space-y-3">
+                <input type="text" name="card_number" placeholder="Número de tarjeta" autocomplete="cc-number"
+                  class="w-full px-4 py-2.5 rounded-lg border border-gray-300 focus:border-verde-bosque focus:ring-1 focus:ring-verde-bosque outline-none text-sm">
+                <div class="flex gap-3">
+                  <input type="text" name="card_expiry" placeholder="MM/AA" autocomplete="cc-exp"
+                    class="w-1/2 px-4 py-2.5 rounded-lg border border-gray-300 focus:border-verde-bosque focus:ring-1 focus:ring-verde-bosque outline-none text-sm">
+                  <input type="text" name="card_cvc" placeholder="CVC" autocomplete="cc-csc"
+                    class="w-1/2 px-4 py-2.5 rounded-lg border border-gray-300 focus:border-verde-bosque focus:ring-1 focus:ring-verde-bosque outline-none text-sm">
+                </div>
+              </div>
+            </div>
+            <!-- Sinpe Details -->
+            <div id="details-sinpe" class="hidden">
+              <p class="text-sm text-gray-700 mb-2">Realiza tu transferencia Sinpe Móvil al número: <br><strong
+                  class="text-verde-bosque text-lg">8888-8888</strong></p>
+              <p class="text-xs text-gray-500 mb-3">A nombre de Miradas de Alegría.</p>
+              <input type="text" placeholder="Número de comprobante"
+                class="w-full px-4 py-2.5 rounded-lg border border-gray-300 focus:border-verde-bosque focus:ring-1 focus:ring-verde-bosque outline-none text-sm">
+            </div>
+            <!-- PayPal Details -->
+            <div id="details-paypal" class="hidden text-center">
+              <p class="text-sm text-gray-700 mb-2">Serás redirigido a PayPal para completar tu donación de forma
+                segura.</p>
+              <i class="fa-brands fa-paypal text-3xl text-blue-600"></i>
+            </div>
+            <!-- Stripe Details -->
+            <div id="details-stripe" class="hidden text-center">
+              <p class="text-sm text-gray-700 mb-2">Pagos procesados de manera ultrasegura mediante la infraestructura
+                de Stripe.</p>
+              <i class="fa-brands fa-stripe text-4xl text-[#635BFF]"></i>
+            </div>
+          </div>
+
+          <!-- Datos del Donante -->
+          <div class="space-y-3 mb-6">
+            <input type="text" name="donor_name" placeholder="Nombre completo" required autocomplete="name"
+              class="w-full px-4 py-3 rounded-xl border border-gray-200 focus:border-verde-bosque focus:ring-2 focus:ring-green-100 transition-all outline-none">
+            <input type="email" name="donor_email" placeholder="Correo electrónico" required autocomplete="email"
+              class="w-full px-4 py-3 rounded-xl border border-gray-200 focus:border-verde-bosque focus:ring-2 focus:ring-green-100 transition-all outline-none">
+            <textarea name="donor_message" placeholder="Mensaje o dedicatoria (Opcional)" rows="2"
+              class="w-full px-4 py-3 rounded-xl border border-gray-200 focus:border-verde-bosque focus:ring-2 focus:ring-green-100 transition-all outline-none resize-none"></textarea>
+          </div>
+
+          <!-- reCAPTCHA -->
+          <div class="flex justify-center mb-6">
+            <div id="recaptcha-donation"></div>
+          </div>
+
+          <!-- Submit -->
+          <button type="submit"
+            class="w-full bg-verde-bosque text-white font-bold py-4 rounded-xl hover:bg-verde-bosque-dark transition-all transform hover:-translate-y-1 shadow-lg text-lg flex items-center justify-center gap-2">
+            <i class="fa-solid fa-lock text-sm bg-white/20 p-1.5 rounded-full"></i>
+            Donar de forma segura
+          </button>
+        </form>
+      </div>
+
+      <!-- Pantalla de Éxito Oculta -->
+      <div id="donation-success" class="hidden text-center py-8">
+        <i class="fa-solid fa-circle-check text-6xl text-green-500 mb-4 animate-bounce"></i>
+        <h3 class="text-2xl font-bold text-negro-suave mb-2">¡Gracias por tu apoyo! 🙌</h3>
+        <p class="text-gray-600 mb-6">Hemos registrado tu intención de aportar. Próximamente habilitaremos el
+          procesamiento automático.</p>
+        <button onclick="closeDonationModal()"
+          class="font-bold text-verde-bosque border border-verde-bosque rounded-xl px-6 py-2 hover:bg-green-50 transition">Volver
+          a la página</button>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ==================== CONTACT MODAL ==================== -->
+  <div id="contact-modal"
+    class="fixed inset-0 z-[9999] flex items-center justify-center bg-black/60 opacity-0 invisible transition-all duration-300 px-4">
+    <div id="contact-modal-content"
+      class="bg-white rounded-3xl p-6 md:p-0 max-w-3xl w-full relative shadow-2xl transform scale-95 transition-transform duration-300 flex flex-col md:flex-row overflow-hidden max-h-[95vh] overflow-y-auto">
+      <button id="close-contact-modal"
+        class="absolute top-4 right-4 text-gray-400 hover:text-verde-bosque transition-colors z-20">
+        <i class="fa-solid fa-xmark text-2xl"></i>
+      </button>
+
+      <!-- Left Column: Form -->
+      <div class="p-6 md:p-8 md:w-3/5">
+        <h2 class="text-2xl font-extrabold text-negro-suave mb-2">Estemos en Contacto</h2>
+        <p class="text-gray-600 text-sm mb-6">Déjanos tu mensaje y te responderemos pronto.</p>
+
+        <form id="contact-form" onsubmit="event.preventDefault(); sendToWhatsApp();">
+          <div class="space-y-3 mb-5">
+            <input type="text" id="contact-name" name="contact_name" placeholder="Tu Nombre" required
+              autocomplete="name"
+              class="w-full px-4 py-2.5 rounded-xl border border-gray-200 focus:border-verde-bosque focus:ring-2 focus:ring-green-100 outline-none text-sm">
+            <input type="email" id="contact-email" name="contact_email" placeholder="Tu Correo" required
+              autocomplete="email"
+              class="w-full px-4 py-2.5 rounded-xl border border-gray-200 focus:border-verde-bosque focus:ring-2 focus:ring-green-100 outline-none text-sm">
+
+            <select id="contact-reason" required aria-label="Motivo de contacto"
+              class="w-full px-4 py-2.5 rounded-xl border border-gray-200 focus:border-verde-bosque focus:ring-2 focus:ring-green-100 outline-none text-sm text-gray-600 bg-white cursor-pointer">
+              <option value="" disabled selected>¿En qué podemos ayudarte?</option>
+              <option value="Quiero ser voluntario">Quiero ser voluntario</option>
+              <option value="Tengo dudas">Tengo dudas</option>
+              <option value="Quiero donar pero necesito info">Quiero donar pero necesito info</option>
+              <option value="Alianzas institucionales">Alianzas institucionales</option>
+            </select>
+
+            <textarea id="contact-message" name="contact_message" placeholder="Tu mensaje..." required rows="4"
+              class="w-full px-4 py-3 rounded-xl border border-gray-200 focus:border-verde-bosque focus:ring-2 focus:ring-green-100 outline-none resize-none text-sm"></textarea>
+          </div>
+
+          <!-- reCAPTCHA -->
+          <div class="flex justify-center mb-5">
+            <div id="recaptcha-contact"></div>
+          </div>
+
+          <button type="submit"
+            class="w-full bg-[#25D366] text-white font-bold py-3 rounded-xl hover:bg-[#1ebe57] transition-all shadow-md flex items-center justify-center gap-2">
+            <i class="fa-brands fa-whatsapp text-xl"></i> Enviar por WhatsApp
+          </button>
+        </form>
+      </div>
+
+      <!-- Right Column: Direct Contact -->
+      <div
+        class="bg-gray-50 flex flex-col justify-center p-6 md:p-8 md:w-2/5 border-t md:border-t-0 md:border-l border-gray-100">
+        <h3 class="text-lg font-bold text-gray-800 mb-4">Contacto Directo</h3>
+
+        <a href="https://wa.me/50612345678" target="_blank" rel="noopener noreferrer"
+          class="flex items-center gap-3 bg-[#25D366] text-white p-3 rounded-xl hover:bg-[#1ebe57] transition-colors mb-3 no-underline shadow-sm hover:-translate-y-0.5">
+          <i class="fa-brands fa-whatsapp text-2xl"></i>
+          <div>
+            <p class="font-bold text-sm leading-tight">WhatsApp</p>
+            <p class="text-xs opacity-90 leading-tight">Respuesta rápida</p>
+          </div>
+        </a>
+
+        <a href="mailto:info@miradasdealegria.org"
+          class="flex items-center gap-3 bg-white border border-gray-200 text-gray-700 p-3 rounded-xl hover:border-verde-bosque hover:text-verde-bosque transition-colors mb-6 no-underline shadow-sm hover:-translate-y-0.5">
+          <i class="fa-solid fa-envelope text-2xl text-verde-bosque"></i>
+          <div>
+            <p class="font-bold text-sm leading-tight">Email</p>
+            <p class="text-[11px] text-gray-500 leading-tight">info@miradasdealegria.org</p>
+          </div>
+        </a>
+
+        <div class="mt-auto pt-4 border-t border-gray-200">
+          <p class="text-xs font-bold text-gray-500 uppercase tracking-wider mb-3">Síguenos</p>
+          <div class="flex gap-2">
+            <a href="#"
+              class="w-9 h-9 rounded-full bg-gray-200 flex items-center justify-center text-gray-600 hover:bg-azul-confianza hover:text-white transition-colors"><i
+                class="fa-brands fa-facebook-f"></i></a>
+            <a href="#"
+              class="w-9 h-9 rounded-full bg-gray-200 flex items-center justify-center text-gray-600 hover:bg-pink-600 hover:text-white transition-colors"><i
+                class="fa-brands fa-instagram"></i></a>
+            <a href="#"
+              class="w-9 h-9 rounded-full bg-gray-200 flex items-center justify-center text-gray-600 hover:bg-black hover:text-white transition-colors"><i
+                class="fa-brands fa-x-twitter"></i></a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Newsletter section moved before footer -->
+
+  <!-- ==================== SCRIPTS ==================== -->
+  <!-- Firebase SDK (v9 compat) -->
+  <script src="https://www.gstatic.com/firebasejs/9.22.1/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.22.1/firebase-firestore-compat.js"></script>
+
+  <script>
+    // Configuración de Firebase (Real)
+    const firebaseConfig = {
+      apiKey: "AIzaSyAOVWLp_X9EFSA-3p1nd8TblRsn2h32rVA",
+      authDomain: "organizacion-benefica.firebaseapp.com",
+      projectId: "organizacion-benefica",
+      storageBucket: "organizacion-benefica.firebasestorage.app",
+      messagingSenderId: "123410741840",
+      appId: "1:123410741840:web:51113baf3ddc5362b86f55"
+    };
+
+    // Inicializar Firebase
+    firebase.initializeApp(firebaseConfig);
+    const db = firebase.firestore();
+  </script>
+
+  <!-- AOS Library -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+  <!-- Custom Script -->
+  <script src="js/script.js"></script>
+
+</body>
+
+</html>
